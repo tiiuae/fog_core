@@ -54,9 +54,10 @@ def generate_launch_description():
     
     ld.add_action(
         Node(
-            name = 'rplidar',
+            namespace = namespace,
             package = 'rplidar_ros2',
             executable = 'rplidar',
+            name = 'rplidar',
             parameters = [{
                 'serial_port': '/dev/ttyUSB0',
                 'serial_baudrate': 256000,  # A3
