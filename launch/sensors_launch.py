@@ -15,7 +15,7 @@ def generate_launch_description():
     ld = LaunchDescription()
 
     # environment variables
-    UAV_NAME = os.getenv('UAV_NAME')
+    DRONE_DEVICE_ID = os.getenv('DRONE_DEVICE_ID')
 
     # arguments
     ld.add_action(DeclareLaunchArgument("rplidar_mode", default_value="outdoor"))
@@ -29,12 +29,12 @@ def generate_launch_description():
     rplidar_mode = PythonExpression(['"Stability" if "outdoor" == "', LaunchConfiguration("rplidar_mode"), '" else "Sensitivity"'])
 
     #namespace declarations
-    namespace = UAV_NAME
+    namespace = DRONE_DEVICE_ID
 
     # frame names
-    fcu_frame = UAV_NAME + "/fcu"         # the same definition is in static_tf_launch.py file
-    rplidar_frame = UAV_NAME + "/rplidar" # the same definition is in static_tf_launch.py file
-    garmin_frame = UAV_NAME + "/garmin"   # the same definition is in static_tf_launch.py file
+    fcu_frame = DRONE_DEVICE_ID + "/fcu"         # the same definition is in static_tf_launch.py file
+    rplidar_frame = DRONE_DEVICE_ID + "/rplidar" # the same definition is in static_tf_launch.py file
+    garmin_frame = DRONE_DEVICE_ID + "/garmin"   # the same definition is in static_tf_launch.py file
 
     ld.add_action(
         Node(

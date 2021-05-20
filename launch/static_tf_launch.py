@@ -7,15 +7,15 @@ def generate_launch_description():
     ld = LaunchDescription()
 
     # environment variables
-    UAV_NAME = os.getenv('UAV_NAME')
+    DRONE_DEVICE_ID = os.getenv('DRONE_DEVICE_ID')
 
     #namespace declarations
-    namespace = UAV_NAME
+    namespace = DRONE_DEVICE_ID
 
     # frame names
-    fcu_frame = UAV_NAME + "/fcu"
-    rplidar_frame = UAV_NAME + "/rplidar"
-    garmin_frame = UAV_NAME + "/garmin"
+    fcu_frame = DRONE_DEVICE_ID + "/fcu"
+    rplidar_frame = DRONE_DEVICE_ID + "/rplidar"
+    garmin_frame = DRONE_DEVICE_ID + "/garmin"
     
     # node definitions
     ld.add_action(
