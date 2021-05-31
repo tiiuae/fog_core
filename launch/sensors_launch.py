@@ -19,7 +19,7 @@ def generate_launch_description():
 
     # arguments
     ld.add_action(DeclareLaunchArgument("rplidar_mode", default_value="outdoor"))
-    ld.add_action(DeclareLaunchArgument("serial_port", default_value="/dev/ttyUSB0"))
+    ld.add_action(DeclareLaunchArgument("serial_port", default_value="/dev/rplidar"))
 
     # mode select for rplidar
     # ----------------------
