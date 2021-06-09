@@ -49,6 +49,7 @@ def generate_launch_description():
                 'inverted': False,
                 'angle_compensate': True,
                 'scan_mode': rplidar_mode,
+                'topic_name': 'rplidar/scan',
             }],
             output = 'screen',
         ),
